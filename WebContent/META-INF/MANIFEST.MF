@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Crime_Management
+Bundle-SymbolicName: Crime_Management
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: WEB-INF/classes/
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: javax.el,
+ javax.servlet,
+ javax.servlet.http,
+ javax.servlet.jsp,
+ javax.servlet.jsp.el,
+ javax.servlet.jsp.tagext
+Web-ContextPath: /Crime_Management
