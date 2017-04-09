@@ -5,7 +5,14 @@ public class Address {
 	private String state;
 	private String landmark;
 	private String plot;
+	private int addressId;
+	static int count;
 	
+	
+	public int getAddressId() {
+		return addressId;
+	}
+
 	public String getCity(){
 		return city;
 	}
