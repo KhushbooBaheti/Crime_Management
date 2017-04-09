@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `Address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Address` (
-  `addid` int(11) NOT NULL AUTO_INCREMENT,
-  `plotno` int(11) DEFAULT NULL,
+  `addid` int(11) NOT NULL,
+  `plotno` varchar(11) DEFAULT NULL,
   `landmark` varchar(50) NOT NULL,
   `city` varchar(20) DEFAULT NULL,
   `state` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`addid`)
+  PRIMARY KEY (`addid`),
+  CONSTRAINT `fk_id` FOREIGN KEY (`addid`) REFERENCES `Profile` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,6 +39,7 @@ CREATE TABLE `Address` (
 
 LOCK TABLES `Address` WRITE;
 /*!40000 ALTER TABLE `Address` DISABLE KEYS */;
+INSERT INTO `Address` VALUES (1,'A-205','VDN','jaipur','rajasthan'),(2,'d-2.3','raja park','jaipur','rajasthan');
 /*!40000 ALTER TABLE `Address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,14 +54,11 @@ CREATE TABLE `Profile` (
   `name` varchar(30) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `contactno` varchar(10) DEFAULT NULL,
-  `addid` int(5) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `gender` enum('Male','Female') DEFAULT NULL,
   `category` enum('Victim','Police','Commissioner') DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_addid` (`addid`),
-  CONSTRAINT `fk_addid` FOREIGN KEY (`addid`) REFERENCES `Address` (`addid`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -69,6 +68,7 @@ CREATE TABLE `Profile` (
 
 LOCK TABLES `Profile` WRITE;
 /*!40000 ALTER TABLE `Profile` DISABLE KEYS */;
+INSERT INTO `Profile` VALUES ('khushboo',1,'8290952538',20,'khushboobaheti627@gmail.com','Female','Police'),('Sakshi',2,'1231212323',20,'sak@gmail.com','Female','Victim');
 /*!40000 ALTER TABLE `Profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-09 16:16:12
+-- Dump completed on 2017-04-09 23:26:45

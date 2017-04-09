@@ -17,6 +17,10 @@ public class Address {
 		return city;
 	}
 	
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+
 	public String getState(){
 		return state;
 	}
