@@ -67,9 +67,12 @@ public class SignUpServlet extends HttpServlet {
 		SignUpService reg=new SignUpService();
 		int stat=reg.Register(p,add);
 		if(stat==1)
-		{
-		RequestDispatcher rd=request.getRequestDispatcher("Success.jsp");
-		rd.forward(request, response);
+		{	
+			Admin admin=new Admin();
+			admin.generatepass(p);
+			request.setAttribute("Profile",p);
+			RequestDispatcher rd=request.getRequestDispatcher("Success.jsp");
+			rd.forward(request, response);
 		
 	}
 		else

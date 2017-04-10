@@ -39,7 +39,7 @@ CREATE TABLE `Address` (
 
 LOCK TABLES `Address` WRITE;
 /*!40000 ALTER TABLE `Address` DISABLE KEYS */;
-INSERT INTO `Address` VALUES (1,'A-205','VDN','jaipur','rajasthan'),(2,'d-2.3','raja park','jaipur','rajasthan');
+INSERT INTO `Address` VALUES (1,'A-205','VDN','jaipur','rajasthan'),(2,'d-2.3','raja park','jaipur','rajasthan'),(4,'ssf','as','dfs','sdff'),(5,'kl','lk','kl','kl'),(6,'kl','mk','kmn','mkm'),(7,'fewe','fwfw','fewfw','wfw'),(8,'scs','scsc','scsc','cscs'),(9,'dedc','cfcf','fcfv','vfv');
 /*!40000 ALTER TABLE `Address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +59,7 @@ CREATE TABLE `Profile` (
   `gender` enum('Male','Female') DEFAULT NULL,
   `category` enum('Victim','Police','Commissioner') DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,8 +68,33 @@ CREATE TABLE `Profile` (
 
 LOCK TABLES `Profile` WRITE;
 /*!40000 ALTER TABLE `Profile` DISABLE KEYS */;
-INSERT INTO `Profile` VALUES ('khushboo',1,'8290952538',20,'khushboobaheti627@gmail.com','Female','Police'),('Sakshi',2,'1231212323',20,'sak@gmail.com','Female','Victim');
+INSERT INTO `Profile` VALUES ('khushboo',1,'8290952538',20,'khushboobaheti627@gmail.com','Female','Police'),('Sakshi',2,'1231212323',20,'sak@gmail.com','Female','Victim'),('yashi',4,'1231231234',20,'asdfhll','Female','Victim'),('go',5,'1029388576',45,'y@gmail.com','Female','Police'),('hello',6,'5656565656',56,'h@gmail.com','Female','Police'),('cee',7,'4545454545',45,'efewcf','Male','Victim'),('dff',8,'1231245656',45,'wdwd','Male','Victim'),('rfr',9,'1111111111',11,'efrf','Male','Victim');
 /*!40000 ALTER TABLE `Profile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password`
+--
+
+DROP TABLE IF EXISTS `password`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password` (
+  `id` int(11) NOT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_passid` FOREIGN KEY (`id`) REFERENCES `Profile` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password`
+--
+
+LOCK TABLES `password` WRITE;
+/*!40000 ALTER TABLE `password` DISABLE KEYS */;
+INSERT INTO `password` VALUES (8,'vdff'),(9,'vrfr');
+/*!40000 ALTER TABLE `password` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -81,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-09 23:26:45
+-- Dump completed on 2017-04-11  0:50:03

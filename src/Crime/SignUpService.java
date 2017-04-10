@@ -40,7 +40,7 @@ public class SignUpService {
 			ResultSet keys = ps.getGeneratedKeys();    
 			keys.next();  
 			int key = keys.getInt(1);
-			
+			p.setId(key);
 			psa.setInt(1,key);
 			psa.setString(2,add.getplot());
 			psa.setString(3,add.getLandmark());
