@@ -1,10 +1,17 @@
 package Crime;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.jdbc.Statement;
+
 import javax.servlet.RequestDispatcher;  
 import javax.servlet.ServletException;  
 import javax.servlet.http.HttpServlet;  
@@ -51,12 +58,21 @@ public class SignUpServlet extends HttpServlet {
 		
 		
 		p.setA(add);
+		
+		
+		
+		
+		
+		
 		SignUpService reg=new SignUpService();
-		int stat=reg.Register(p);
+		int stat=reg.Register(p,add);
 		if(stat==1)
-		{
-		RequestDispatcher rd=request.getRequestDispatcher("Success.jsp");
-		rd.forward(request, response);
+		{	
+			Admin admin=new Admin();
+			admin.generatepass(p);
+			request.setAttribute("Profile",p);
+			RequestDispatcher rd=request.getRequestDispatcher("Success.jsp");
+			rd.forward(request, response);
 		
 	}
 		else
