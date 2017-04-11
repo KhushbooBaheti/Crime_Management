@@ -26,10 +26,7 @@ public class SignUpServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignUpServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+   
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
