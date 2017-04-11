@@ -18,7 +18,7 @@ public class MysqlCon {
 			try{  
 			    Class.forName("com.mysql.jdbc.Driver");  
 			     con=DriverManager.getConnection(  
-			    "jdbc:mysql://localhost:3306/CrimeManagement","root","root");  
+			    "jdbc:mysql://localhost:3306/CrimeManagement","root","@mysql5");  
 			    //here MovieRating is database name, root is username and password  
 			    }catch(Exception e){
 			    	
