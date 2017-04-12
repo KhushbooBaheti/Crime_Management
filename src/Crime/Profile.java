@@ -8,16 +8,16 @@ public class Profile {
 		private int age;
 		private String email;
 		static int count;
-		
+		private String gender;
+		private String category;
+		private String password;
 		public String getPassword() {
 			return password;
 		}
 		public void setPassword(String password) {
 			this.password = password;
 		}
-		private String gender;
-		private String category;
-		private String password;
+		
 		public String getName() {
 			return name;
 		}
