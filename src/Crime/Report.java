@@ -30,8 +30,8 @@ public class Report {
 	public Date getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(java.sql.Date cdate) {
+		this.date = cdate;
 	}
 	public String getLocality() {
 		return locality;
