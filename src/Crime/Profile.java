@@ -1,12 +1,12 @@
 package Crime;
 
 public class Profile {
-		private String name;
-		private int id;
-		private String contact;
-		private Address a;
-		private int age;
-		private String email;
+		protected String name;
+		protected int id;
+		protected String contact;
+		protected Address a;
+		protected int age;
+		protected String email;
 		static int count;
 		private String gender;
 		private String category;
@@ -17,7 +17,13 @@ public class Profile {
 		public void setPassword(String password) {
 			this.password = password;
 		}
+<<<<<<< HEAD
 		
+=======
+		protected String gender;
+		protected String category;
+		protected String password;
+>>>>>>> cd6f952c99a0bc8378593833ba58264232403087
 		public String getName() {
 			return name;
 		}
