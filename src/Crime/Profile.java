@@ -17,7 +17,6 @@ public class Profile {
 		public void setPassword(String password) {
 			this.password = password;
 		}
-<<<<<<< HEAD
 		protected String gender;
 		protected String category;
 		protected String password;
