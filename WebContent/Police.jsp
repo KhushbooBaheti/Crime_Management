@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="Crime.Profile"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +7,10 @@
 <title>Police</title>
 </head>
 <body>
+<%Profile p=(Profile)session.getAttribute("Profile");
+String name=p.getName();
+%>
+<h1><%=name%></h1>
 
 </body>
 </html>
