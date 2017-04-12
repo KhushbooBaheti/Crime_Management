@@ -8,9 +8,7 @@ public class Profile {
 		protected int age;
 		protected String email;
 		static int count;
-		private String gender;
-		private String category;
-		private String password;
+		
 		public String getPassword() {
 			return password;
 		}
@@ -20,9 +18,7 @@ public class Profile {
 		protected String gender;
 		protected String category;
 		protected String password;
-=======
-		
->>>>>>> eb8bdae5e9823cf95512a56d2f336fc2879be929
+
 		public String getName() {
 			return name;
 		}

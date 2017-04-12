@@ -29,10 +29,7 @@
     <servlet-name>SignUpServlet</servlet-name>
     <url-pattern>/SignUp</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
-=======
-  
->>>>>>> eb8bdae5e9823cf95512a56d2f336fc2879be929
+
   <servlet>
     <description></description>
     <display-name>LoginServlet1</display-name>
