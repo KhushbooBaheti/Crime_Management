@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.28, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: CrimeManagement
 -- ------------------------------------------------------
--- Server version	5.5.54-0ubuntu0.14.04.1
+-- Server version	5.6.28-0ubuntu0.15.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -44,6 +44,33 @@ INSERT INTO `Address` VALUES (1,'A-205','VDN','jaipur','rajasthan'),(2,'d-2.3','
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Evidence`
+--
+
+DROP TABLE IF EXISTS `Evidence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Evidence` (
+  `eid` int(11) NOT NULL AUTO_INCREMENT,
+  `rid` int(11) NOT NULL DEFAULT '0',
+  `edescpt` varchar(200) DEFAULT NULL,
+  `etype` varchar(30) DEFAULT NULL,
+  `image` longblob,
+  `file` longblob,
+  PRIMARY KEY (`eid`,`rid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Evidence`
+--
+
+LOCK TABLES `Evidence` WRITE;
+/*!40000 ALTER TABLE `Evidence` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Evidence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Profile`
 --
 
@@ -70,6 +97,37 @@ LOCK TABLES `Profile` WRITE;
 /*!40000 ALTER TABLE `Profile` DISABLE KEYS */;
 INSERT INTO `Profile` VALUES ('khushboo',1,'8290952538',20,'khushboobaheti627@gmail.com','Female','Police'),('Sakshi',2,'1231212323',20,'sak@gmail.com','Female','Victim'),('yashi',4,'1231231234',20,'asdfhll','Female','Victim'),('go',5,'1029388576',45,'y@gmail.com','Female','Police'),('hello',6,'5656565656',56,'h@gmail.com','Female','Police'),('cee',7,'4545454545',45,'efewcf','Male','Victim'),('dff',8,'1231245656',45,'wdwd','Male','Victim'),('rfr',9,'1111111111',11,'efrf','Male','Victim');
 /*!40000 ALTER TABLE `Profile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Report`
+--
+
+DROP TABLE IF EXISTS `Report`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Report` (
+  `rid` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) DEFAULT NULL,
+  `ctype` varchar(30) NOT NULL,
+  `clocation` varchar(50) DEFAULT NULL,
+  `cdate` date DEFAULT NULL,
+  `ctime` time DEFAULT NULL,
+  `cdescription` varchar(100) DEFAULT NULL,
+  `status` varchar(20) DEFAULT 'registered',
+  PRIMARY KEY (`rid`),
+  KEY `fk_pid` (`id`),
+  CONSTRAINT `fk_pid` FOREIGN KEY (`id`) REFERENCES `Profile` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Report`
+--
+
+LOCK TABLES `Report` WRITE;
+/*!40000 ALTER TABLE `Report` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Report` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -106,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-11  0:50:03
+-- Dump completed on 2017-04-13 14:47:33

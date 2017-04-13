@@ -11,5 +11,6 @@
 	Profile p=(Profile)session.getAttribute("Profile");
 %>
 <%=p.getName() %>
+
 </body>
 </html>

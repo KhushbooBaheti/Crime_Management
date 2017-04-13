@@ -28,7 +28,7 @@ public class SignUpService {
 			ps.setString(1,p.getName());
 			ps.setInt(2,p.getId());
 			ps.setString(3,p.getContact());
-				ps.setInt(4,p.getAge());
+			ps.setInt(4,p.getAge());
 			ps.setString(5, p.getEmail());
 			ps.setString(6, p.getGender());
 			ps.setString(7, p.getCategory());

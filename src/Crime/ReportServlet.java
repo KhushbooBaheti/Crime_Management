@@ -65,6 +65,15 @@ public class ReportServlet extends HttpServlet {
 			}
 	r.setDescription(request.getParameter("crimedescription"));
 	
+	
+	evd.setEvidenceType(request.getParameter("description"));
+	evd.setEvidenceType(request.getParameter("evidencetype"));
+	
+	
+	
+	Profile p=(Profile)request.getSession(false).getAttribute("Profile");
+	
+	
 }
 }
 		
