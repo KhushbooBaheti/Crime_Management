@@ -85,7 +85,7 @@ public class LoginServlet extends HttpServlet {
 			if(category.equals("Victim")){
 				/* rd=request.getRequestDispatcher("Victim.jsp");
 				rd.forward(request, response);*/
-				response.sendRedirect("Victim.jsp");
+				response.sendRedirect("Report.jsp");
 			}
 			else if(category.equals("Police")){
 				/*rd=request.getRequestDispatcher("Police.jsp");

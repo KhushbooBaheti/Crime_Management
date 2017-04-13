@@ -8,9 +8,9 @@ public class Report {
 	
 	private int reportId;
 	private String crimeType;
-	private Date date;
+	private String date;
 	private String locality;
-	private Time time;
+	private String time;
 	private String description;
 	private Evidence evidence;
 	private String status;
@@ -27,10 +27,10 @@ public class Report {
 	public void setCrimeType(String crimeType) {
 		this.crimeType = crimeType;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(java.sql.Date cdate) {
+	public void setDate(String cdate) {
 		this.date = cdate;
 	}
 	public String getLocality() {
@@ -39,10 +39,10 @@ public class Report {
 	public void setLocality(String locality) {
 		this.locality = locality;
 	}
-	public Time getTime() {
+	public String getTime() {
 		return time;
 	}
-	public void setTime(Time time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 	public String getDescription() {
