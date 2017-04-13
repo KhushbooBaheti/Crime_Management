@@ -1,0 +1,50 @@
+package Crime;
+
+public class Address {
+	private String city;
+	private String state;
+	private String landmark;
+	private String plot;
+	private int addressId;
+	static int count;
+	
+	
+	public int getAddressId() {
+		return addressId;
+	}
+
+	public String getCity(){
+		return city;
+	}
+	
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+
+	public String getState(){
+		return state;
+	}
+	public String getLandmark(){
+		return landmark;
+	}
+	public String getplot(){
+		return plot;
+	}
+	
+	
+	public void setCity(String c){
+		city=c;
+	}
+	public void setState(String s){
+		state=s;
+	}
+	public void setLandmark(String l){
+		landmark=l;
+	}
+	public void setplot(String p){
+		plot=p;
+	}
+	
+	
+	
+}
